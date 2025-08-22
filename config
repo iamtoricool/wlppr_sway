@@ -1,0 +1,21 @@
+# Includes Saved Wallpaper
+include wlppr.conf
+
+#
+# Wallpaper Manager Keybinds:
+#
+    set $wallpaper_util ${HOME}/.config/sway/modules/utils/wlppr/wlppr_util.sh
+
+    # Switch to next wallpaper
+    # bindsym $mod+Ctrl+n exec $wallpaper_util next
+    # bindsym $mod+Ctrl+p exec $wallpaper_util prev
+
+mode "wlppr" {
+    bindsym n exec $wallpaper_util next
+    bindsym p exec $wallpaper_util prev
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Alt+w mode "wlppr"
